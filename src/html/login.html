@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projecto front end fundamentals</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="wrapper" class="flex flex-center">
+        <header>
+            <nav></nav>
+        </header>
+        <main >
+            <section>
+                <form class="form-container flex flex-column flex-center" method="POST">
+                    <p style="color: red;" id="status"></p>
+                    <label for="username">
+                        Username
+                    </label>
+                    <input id="username" name="username" type="text">
+                    <label for="password">
+                        Password
+                    </label>
+                    <input name="password" id="password" type="password">
+                    <label for="name-password">
+                       <input type="checkbox" name="show-password" id="show-password"> Mostrar contrasenia
+                    </label>
+                    <input id="send-data" type="submit" value="login">
+                </form>
+            </section>
+        </main>
+        <footer>
+
+        </footer>   
+    </div>
+    <script src="../js/login.js" type="module"></script>
+</body>
+</html>
