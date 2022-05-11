@@ -3,7 +3,7 @@ class HTMLWrapper{
        this.element = element
    }
    on(event, callback, option = false){
-       this.element.addEventListener(event, callback, option)
+       this.element?.addEventListener(event, callback, option)
        return this
    }
    onClick(callback, option = false){
@@ -15,6 +15,9 @@ class HTMLWrapper{
    setText(text){
        this.element.textContent = text
        return this
+   }
+   content(){
+       return this.element.value ?? this.element.textContent
    }
 }
 

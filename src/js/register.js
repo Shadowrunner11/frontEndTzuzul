@@ -24,24 +24,34 @@ showCheckbox.onChange(event=>{
 
 registerData.onClick(event=>{
     event.preventDefault()
-    try {
-        
-        fetch("http://localhost:3000/users", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({email, password})
-        })
-            .then(response=>response.json())
-            .then(data=>console.log(data.status))
-            .catch(error=>{
-                $("#status").setText("Datos incorrectos")
-                console.log(error)
-                
+
+    if($("#repeat-password").content()===passwordInput.content()){
+       try {
+            
+            fetch("http://localhost:3000/users", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({email, password})
             })
-    } catch (error) {
-        $("#status").setText("Datos Incorrectos")
-        console.log(error)
+                .then(response=>response.json())
+                .then(data=>console.log(data.status))
+                .catch(error=>{
+                    $("#status").setText("Datos incorrectos")
+                    console.log(error)
+                    
+                })
+        } catch (error) {
+            $("#status").setText("Datos Incorrectos")
+            console.log(error)
+        
+
+        }
+    }else{
+        $("#status").setText("Las contrasenias no coinciden")
     }
+
+
 })
+

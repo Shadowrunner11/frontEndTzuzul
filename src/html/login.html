@@ -8,12 +8,20 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div id="wrapper" class="flex flex-center">
+    <div id="wrapper">
         <header>
-            <nav></nav>
+            <nav class="flex flex-space-bet">
+                <div class="left">
+                    <a href="../index.html">Inicio</a>
+                </div>
+                <div class="rigth"> 
+                    <a href="./register.html">Sing in</a>
+    
+                </div>
+            </nav>
         </header>
-        <main >
-            <section>
+        <main class="flex flex-center flex-column">
+            <section style="width: 100%;">
                 <form class="form-container flex flex-column flex-center" method="POST">
                     <p style="color: red;" id="status"></p>
                     <label for="username">
@@ -28,11 +36,12 @@
                        <input type="checkbox" name="show-password" id="show-password"> Mostrar contrasenia
                     </label>
                     <input id="send-data" type="submit" value="login">
+                    <a href="./on_construction.html">Olvidaste tu contrasenia?</a>
                 </form>
             </section>
         </main>
         <footer>
-
+            Little Dev derechos reservados
         </footer>   
     </div>
     <script src="../js/login.js" type="module"></script>

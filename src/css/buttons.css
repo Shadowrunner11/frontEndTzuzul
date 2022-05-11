@@ -1,0 +1,15 @@
+button, input[type="button"], input[type="submit"]{
+    margin-top: 20px;
+    width: 30%;
+    min-width: 70px;
+    height: 40px;
+    color: aliceblue;
+    border: none;
+    background-color: #2935f5;
+}
+
+button:hover, input[type="button"]:hover, input[type="submit"]:hover{
+
+    background-color: #3a45ff;
+}
+

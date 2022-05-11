@@ -6,33 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projecto front end fundamentals</title>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="../css/register.css"> -->
 </head>
 <body>
-    <div id="wrapper" class="flex flex-center">
+    <div id="wrapper" >
         <header>
-            <nav></nav>
+            <nav class="flex flex-space-bet">
+                <div class="left">
+                    <a href="../index.html">Inicio</a>
+                </div>
+                <div class="rigth"> 
+                    <a id="log-in" href="./login.html">Log in</a>
+            </nav>
         </header>
-        <main >
-            <section>
-                <form class="form-container flex flex-column flex-center">
+        <main class="flex flex-center flex-column">
+            <section style="width: 100%;">
+                <form class="form-container flex flex-column pl-30">
                     <p style="color: red;" id="status"></p>
-                    <label for="username">
-                        Email
-                    </label>
-                    <input id="username" name="username" type="text">
-                    <label for="password">
-                        Password
-                    </label>
-                    <input name="password" id="password" type="password">
-                    <label for="name-password">
+                    
+                        <label for="username">
+                            Email
+                        </label>
+                        <input id="username" name="username" type="text">
+
+                  
+                        <label for="password">
+                            Password
+                        </label>
+                        <input name="password" id="password" type="password">
+
+                    
+                        <label for="repeat-password">
+                            Repite el password
+                        </label>
+                        <input name="repeat-password" id="repeat-password" type="password">
+
+                    
+                    <!-- <label for="show-password">
                        <input type="checkbox" name="show-password" id="show-password"> Mostrar contrasenia
-                    </label>
+                    </label> -->
                     <input id="send-data-register" type="submit" value="register">
+                    
+                    
                 </form>
             </section>
         </main>
         <footer>
-
+            Little Dev derechos reservados
         </footer>   
     </div>
     <script src="../js/register.js" type="module"></script>
