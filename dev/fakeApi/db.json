@@ -29,6 +29,12 @@
       "password": "$2a$10$BF6Kz8I1EwqGGlC8qs2SH.An6eYN2aSeXkTb4yqNWEiosb7MQHKr.",
       "username": "assa",
       "id": 5
+    },
+    {
+      "email": "thhonnelo@gmail.com",
+      "password": "$2a$10$a8LqWYIBS8UQKqjYlNf4we99lSm3i.B77ycopoSk70m.gP42.Gqzy",
+      "username": "lavaperu",
+      "id": 6
     }
   ]
 }
