@@ -9,9 +9,7 @@ let password;
 let email;
 
 
-usernameInput.onChange(event=>{
-    email = event.target.value
-})
+usernameInput.onChange(event=>{email = event.target.value})
 
 passwordInput.onChange(event=>{
     password = event.target.value

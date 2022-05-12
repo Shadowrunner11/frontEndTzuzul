@@ -1,20 +1,26 @@
 import { $ } from "./functions/selectors.js";
 
-const usernameImput = $("#username")
+const usernameInput = $("#username")
+const emailInput = $("#email")
 const passwordInput = $("#password")
 const showCheckbox = $("#show-password")
 const registerData =$("#send-data-register")
 
 let password;
 let email;
+let username;
 
 
-usernameImput.onChange(event=>{
+emailInput.onChange(event=>{
     email = event.target.value
 })
 
 passwordInput.onChange(event=>{
     password = event.target.value
+})
+
+usernameInput.onChange(event=>{
+    username = event.target.value
 })
 
 showCheckbox.onChange(event=>{
@@ -33,10 +39,21 @@ registerData.onClick(event=>{
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({email, password})
+                body: JSON.stringify({email, password, username})
             })
                 .then(response=>response.json())
-                .then(data=>console.log(data.status))
+                .then(data=>{
+                    const {accessToken} = data
+                    const {username} = data.user
+                    if(accessToken){
+                        document.cookie = "data="+JSON.stringify({accessToken,username})
+                
+                        window.location.replace("./profile.html");
+                    }else{
+                        $("#status").setText("Datos incorectos" )
+                    }
+                    console.log(data)
+                })
                 .catch(error=>{
                     $("#status").setText("Datos incorrectos")
                     console.log(error)

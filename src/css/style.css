@@ -2,6 +2,7 @@
 @import url('./reset.css');
 @import url('./buttons.css');
 @import url('./anchors.css');
+@import url('./inputs.css');
 
 :root{
     --small: 5px;
@@ -14,10 +15,12 @@ header{
     width: 100%;
     position: static;
     top: 0;
+    background: #202929;
 }
 
 nav{
     padding: 20px 30px 10px 30px;
+    min-height: 70px;
 }
 
 main{
@@ -47,15 +50,7 @@ footer{
 #wrapper{
     min-height: 100vh;
     background: linear-gradient(45deg, rgb(25,25,25), rgb(40,40,40));
-}
-
-input{
-    
-    border-radius: var(--small);
-}
-input[type="text"], input[type="password"]{
-    max-width: 96%;
-    min-width: 180px;
+    background: azure;
 }
 
 .flex{
@@ -96,5 +91,9 @@ input[type="text"], input[type="password"]{
 
 .pl-30{
     padding-left: 30px;
+    padding-right: 30px;
 }
 
+.rigth{
+    width: fit-content;
+}
