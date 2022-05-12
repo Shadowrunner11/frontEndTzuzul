@@ -1,21 +1,6 @@
 import { $ } from "./functions/selectors.js"
 
-const mode = document.querySelector('.theme')
-const body = document.querySelector('#wrapper')
 
-mode.addEventListener('click', () => {
-  if (body.classList.contains('dark-theme')) {
-    localStorage.setItem('tema', 'light')
-  } else {
-    localStorage.setItem('tema', 'dark')
-  }
-  body.classList.toggle('dark-theme')
-})
-window.addEventListener('load', (e) => {
-  if (localStorage.getItem('tema') === 'dark') {
-    body.classList.toggle('dark-theme')
-  }
-})
 
 const cookies = document.cookie.split("=")[1]
 
