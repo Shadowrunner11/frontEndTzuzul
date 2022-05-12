@@ -3,7 +3,14 @@
     {
       "email": "matematicadivina1@gmail.com",
       "password": "$2a$10$qBHEsOC.vnBhmjJHjHHg7.zC7QCC1gxOaCHR9VK8JBqXakrNE9X3K",
-      "id": 1
+      "id": 1,
+      "username": "shadowrunner11"
+    },
+    {
+      "email": "matematicadivina2@gmail.com",
+      "password": "$2a$10$VHlIBsx9TsBLjssai.p//uIuP2hn9mKEha/eth3AAL5cVf1Ltqaq.",
+      "id": 2,
+      "username": "shadowrunner11"
     }
   ]
 }

@@ -33,7 +33,15 @@ sendData.onClick(event=>{
     })
         .then(response=>response.json())
         .then(data=>{
-            $("#status").setText(data.accessToken? "Ingreso correcto": "Datos incorectos" )
+            const {accessToken} = data
+            const {username} = data.user
+            if(accessToken){
+                document.cookie = "data="+JSON.stringify({accessToken,username})
+          
+                window.location.replace("./profile.html");
+            }else{
+                $("#status").setText("Datos incorectos" )
+            }
             console.log(data)
         }
         )
