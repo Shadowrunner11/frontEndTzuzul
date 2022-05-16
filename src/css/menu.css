@@ -1,4 +1,11 @@
-
+.menu{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+.menu a:hover{
+    font-weight: bold;
+}
 
 @media (max-width: 700px) {
     .hmbrg {
@@ -23,5 +30,17 @@
     }
     .hmbrg.active .line:nth-child(3){
         transform: rotate(-45deg) translate(7.5px, -7.5px);
+    }
+    .menu{
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        display: grid;
+        background: #f0943f;
+        width: 100%;
+        padding: 25px;
+    }
+    .menu.active{
+        display: none;
     }
 }

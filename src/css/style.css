@@ -47,7 +47,7 @@ header{
 
 
 nav{
-    padding: 20px 30px 10px 30px;
+    padding:20px;
     min-height: 70px;
 }
 
@@ -165,7 +165,7 @@ footer{
 
 .theme{
     cursor: pointer;
-    color: var(--body-bg)
+    color: azure;
 }
 
 .hidden, .hidden-responsive{
