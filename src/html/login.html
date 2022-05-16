@@ -12,11 +12,17 @@
 <body>
     <div id="wrapper">
         <header>
-            <nav class="flex flex-space-bet">
+            <div id="burger" class="menu__burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="flex flex-space-bet flex-nav hidden-responsive">
+               
                 <div class="left">
                     <a href="../index.html">Inicio</a>
                 </div>
-                <div class="rigth flex options"> 
+                <div class="rigth flex options flex-nav"> 
                     <a href="./register.html">Sing in</a>
                     <span class="material-symbols-outlined theme">emoji_objects</span>
                     
@@ -24,6 +30,7 @@
             </nav>
         </header>
         <main class="flex flex-center flex-column">
+            <img style="z-index: 0; position:absolute; max-height: 90%;" src="../assets/svg/blob.svg">
             <section style="width: 100%;">
                 <form class="form-container flex flex-column flex-center" method="POST">
                     <p style="color: red;" id="status"></p>
@@ -47,6 +54,7 @@
             Little Dev derechos reservados
         </footer>   
     </div>
+    <script src="../js/main.js" type="module"></script>
     <script src="../js/theme.js" type="module"></script>
     <script src="../js/login.js" type="module"></script>
 </body>

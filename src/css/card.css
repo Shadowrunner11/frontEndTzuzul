@@ -11,6 +11,10 @@
     color: var(--text-color);
 }
 
+.card img {
+    max-width: 300px;
+    min-height: 150px;
+}
 .card:hover{
     background: rgba(13, 53, 153, 0.781);
 }

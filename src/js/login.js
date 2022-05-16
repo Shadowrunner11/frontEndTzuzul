@@ -1,15 +1,15 @@
 import { $ } from "./functions/selectors.js";
-
+//import axios from "axios";
 const usernameInput = $("#username")
 const passwordInput = $("#password")
 const showCheckbox = $("#show-password")
 const sendData = $("#send-data")
 
 let password;
-let email;
+let username;
 
 
-usernameInput.onChange(event=>{email = event.target.value})
+usernameInput.onChange(event=>{username = event.target.value})
 
 passwordInput.onChange(event=>{
     password = event.target.value
@@ -21,16 +21,18 @@ showCheckbox.onChange(event=>{
 
 sendData.onClick(event=>{
     event.preventDefault()
-    
-    fetch("http://localhost:3000/login", {
+    //axios.post("http://tzuzulbf.herokuapp.com/login",{username,})
+    fetch("http://tzuzulbf.herokuapp.com/login", {
         method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({email, password})
+        
+        body: JSON.stringify({username, password})
     })
         .then(response=>response.json())
         .then(data=>{
+            console.log(data)
             const {accessToken} = data
             const {username} = data.user
             if(accessToken){

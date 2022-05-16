@@ -21,10 +21,28 @@ body{
 
 header{
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
     background: #202929;
 }
+
+#burger{
+    position: sticky;
+    height: 100%;
+    background-color: rgb(125,125,125);
+    padding: 12px;
+}
+
+.menu__burger >div{
+    content: "";
+    background-color: aqua;
+    height: 8px;
+    margin: auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    width: 20%;
+}
+
 
 nav{
     padding: 20px 30px 10px 30px;
@@ -32,7 +50,8 @@ nav{
 }
 
 main{
-    min-height: 90vh;
+    
+    min-height: 99vh;
     width: 100%;
 }
 
@@ -40,7 +59,7 @@ footer{
     text-align: center;
     width: 100%;
     color: #bbb;
-    background: #1911a1;
+    background: #202929;
     position: static;
     bottom: 0;
 }
@@ -78,6 +97,7 @@ footer{
 }
 
 #events-container{
+    margin-top: 100px;
     justify-content: space-evenly;
 }
 
@@ -139,14 +159,27 @@ footer{
     align-items: center;
     gap: 10px;
 }
+
+
 .theme{
     cursor: pointer;
     color: var(--body-bg)
 }
 
-.hidden{
+.hidden, .hidden-responsive{
     display: none;
 }
+
+.roll{
+    z-index: 400;
+    animation-name: roll;
+    animation-duration: 2s;
+}
+
+.flex-nav{
+    flex-direction: column;
+}
+
 
 @keyframes modalTransition {
     0%{
@@ -154,5 +187,35 @@ footer{
     }
     100%{
         top: 25vh;
+    }
+}
+
+@keyframes roll {
+    from{
+        margin-top: -200px;
+    }
+    to{
+        margin-top:0;
+    }
+}
+
+@media (min-width:400px) {
+    .hidden-responsive{
+        display: flex;
+    }
+    .flex-nav{
+        flex-direction: row;
+    }
+    #burger{
+        display: none;
+    }
+    header{
+        position: sticky;
+    }
+    main{
+        min-height: 90vh;
+    }
+    #events-container{
+        margin-top: 0;
     }
 }

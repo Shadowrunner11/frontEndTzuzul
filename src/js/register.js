@@ -7,12 +7,12 @@ const showCheckbox = $("#show-password")
 const registerData =$("#send-data-register")
 
 let password;
-let email;
+let first_name;
 let username;
 
 
 emailInput.onChange(event=>{
-    email = event.target.value
+    first_name = event.target.value
 })
 
 passwordInput.onChange(event=>{
@@ -34,12 +34,12 @@ registerData.onClick(event=>{
     if($("#repeat-password").content()===passwordInput.content()){
        try {
             
-            fetch("http://localhost:3000/users", {
+            fetch("http://tzuzulbf.herokuapp.com/register", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({email, password, username})
+                body: JSON.stringify({first_name, password, username})
             })
                 .then(response=>response.json())
                 .then(data=>{
@@ -48,7 +48,7 @@ registerData.onClick(event=>{
                     if(accessToken){
                         document.cookie = "data="+JSON.stringify({accessToken,username})
                 
-                        window.location.replace("./profile.html");
+                        window.location.replace("./events.html");
                     }else{
                         $("#status").setText("Datos incorectos" )
                     }
