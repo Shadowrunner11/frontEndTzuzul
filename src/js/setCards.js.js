@@ -15,6 +15,6 @@ events.forEach(event=>{
 
 const modal = $(".modal")
 $("#create-event").onClick(event=>{
-    modal.element.classList.toogle("hidden")
+    modal.element.classList.toggle("hidden")
     
 })
