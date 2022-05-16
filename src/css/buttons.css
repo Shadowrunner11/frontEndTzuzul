@@ -14,3 +14,12 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover{
     background-color: #3a45ff;
 }
 
+button#create-event{
+    width: 50px;
+    height: 70px;
+    position: absolute;
+    bottom: 40px;
+    margin: 0px;
+    border-radius: 50%;
+    right: 20px;
+}

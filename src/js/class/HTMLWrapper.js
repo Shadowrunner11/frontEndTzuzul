@@ -19,6 +19,18 @@ class HTMLWrapper{
    content(){
        return this.element.value ?? this.element.textContent
    }
+
+   appendElement(elementName, classes,id){
+        const element = document.createElement(elementName)
+        classes?.forEach(className => {
+            element.classList.add(className)
+        });
+
+        if(id)element.id = id
+        this.element.appendChild(element)
+        
+        return new HTMLWrapper(element)
+   }
 }
 
 export default HTMLWrapper

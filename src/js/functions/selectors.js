@@ -1,9 +1,9 @@
 import HTMLWrapper from "../class/HTMLWrapper.js";
 
-export function $(selector){
-    return new HTMLWrapper(document.querySelector(selector))
+export function $(selector, node=document){
+    return new HTMLWrapper(node.querySelector(selector))
 }
 
-export const $$ = selector=>[...document.querySelectorAll(selector)].map(element=>new HTMLWrapper(element))
+export const $$ = (selector, node=document)=>[...node.querySelectorAll(selector)].map(element=>new HTMLWrapper(element))
 
 

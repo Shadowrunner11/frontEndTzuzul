@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Eventos</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 90%;
+            height: 65vh;
+            margin: 20px auto;
+        }
+        table > * >*>*{
+            border: 1px solid;
+            justify-content: space-around;
+            padding: 10px 15px;
+            text-align: center;
+        }
+        .month__navigate {
+            justify-content: space-between;
+        }
+
+        button#create-event{
+            width: 50px;
+            height: 70px;
+            position: absolute;
+            bottom: 20px;
+            margin: 0px;
+            border-radius: 50%;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            
+            <nav class="flex flex-space-bet">
+                <div class="left">
+                    <a href="../index.html">Inicio</a>
+                </div>
+                <div id="right-data" class="rigth flex flex-center"> 
+                    <a href="./register.html">Sing in</a>
+                    <a id="log-in" href="./login.html">Log in</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <aside class="container grid">
+                <button id="create-event">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+                <div class="container_month flex-row">
+                    <div class="month__titlte">
+
+                    </div>
+                    <div class="month__navigate flex">
+                        
+                        
+                    </div>
+                    <table id="calendar">
+                        <thead>
+                            <tr class="month-options">
+                                <th colspan="1" id="button-prev-month" data-do="decrease">
+                                    <span class="material-symbols-outlined"> arrow_back_ios</span>
+                                </th>
+                                <th colspan="5" class="mounth" >
+                                    Mayo
+                                </th>
+                                <th colspan="1" id="button-next-month" data-do="increase">
+                                    <span class="material-symbols-outlined"> arrow_forward_ios</span>
+                                </th>
+                            </tr>
+                            
+                            <tr class="days-week">
+                                <th>D</th>
+                                <th>L</th>
+                                <th>M</th>
+                                <th>X</th>
+                                <th>J</th>
+                                <th>V</th>
+                                <th>S</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="calendar__fr">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>16</td>
+                                <td>17</td>
+                                <td>18</td>
+                                <td>19</td>
+                                <td>20</td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                                <td>25</td>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                            </tr>
+                            <tr class="calendar__lr">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="calendar__lr">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </aside>
+        </main>
+    </div>
+</body>
+    <script src="../js/theme.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/events.js" type="module"></script>
+</html>
