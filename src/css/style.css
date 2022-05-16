@@ -110,3 +110,7 @@ footer{
     cursor: pointer;
     color: var(--body-bg)
 }
+
+.hidden{
+    display: none;
+}

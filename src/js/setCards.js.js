@@ -12,3 +12,9 @@ events.forEach(event=>{
     fechas.appendElement("span").setText(event.fechaInicio)
     fechas.appendElement("span").setText(event.fechaInicio)
 })
+
+const modal = $(".modal")
+$("#create-event").onClick(event=>{
+    modal.element.classList.toogle("hidden")
+    
+})
