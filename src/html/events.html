@@ -9,42 +9,49 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <div id="modal" class="hidden">
+        <form id="form-modal" class="form-container flex flex-column flex-center" action="" method="post">
+            <button id="exit">x</button>
+            <label for="title">Titulo</label>
+            <input type="text" name="title" id="title">
+
+            <label for="description">Descripcion</label>
+            <input type="text" name="description" id="description">
+
+            <label for="fecha-inicio">Fecha de inicio</label>
+            <input type="date" name="fecha-inicio" id="fecha-inicio">
+
+            <label for="fecha-fin">Titulo</label>
+            <input type="date" name="fecha-fin" id="fecha-fin">
+
+
+            <input type="submit" value="save">
+        </form>
+    </div>
     <div id="wrapper">
+        <div id="protector" class="hidden">
+
+
+        </div>
         <header>
             <nav class="flex flex-space-bet">
                 <div class="left">
                     <a href="../index.html">Inicio</a>
                 </div>
-                <div class="rigth flex options"> 
+                <div id="right-data" class="rigth flex options"> 
                     <a href="./register.html">Sing in</a>
+                    <a id="log-in" href="./login.html">Log in</a>
                     <span class="material-symbols-outlined theme">emoji_objects</span>
                 </div>
+                
             </nav>
         </header>
-        <div class="modal hidden">
-            <form class="form-container flex flex-column flex-center" action="" method="post">
-                <label for="title">Titulo</label>
-                <input type="text" name="title" id="title">
-
-                <label for="description">Descripcion</label>
-                <input type="text" name="description" id="description">
-
-                <label for="fecha-inicio">Fecha de inicio</label>
-                <input type="date" name="fecha-inicio" id="fecha-inicio">
-
-                <label for="fecha-fin">Titulo</label>
-                <input type="date" name="fecha-fin" id="fecha-fin">
-
-
-                <input type="submit" value="save">
-            </form>
-        </div>
         <main class="flex flex-center flex-column">
             <aside>
 
             </aside>
-            <section id="events-container">
-                <button id="create-event">
+            <section id="events-container" class="flex flex-wrap flex-center">
+                <button id="create-event" class="hidden">
                     <span class="material-symbols-outlined">add</span>
                 </button>
             </section>
@@ -54,7 +61,7 @@
         </footer>   
     </div>
     <script src="../js/theme.js" type="module"></script>
-    <script src="../js/login.js" type="module"></script>
-    <script src="../js/setCards.js.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/setCards.js" type="module"></script>
 </body>
 </html>

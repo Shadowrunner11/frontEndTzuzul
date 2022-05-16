@@ -1,40 +1,16 @@
 {
   "users": [
     {
-      "email": "matematicadivina1@gmail.com",
-      "password": "$2a$10$qBHEsOC.vnBhmjJHjHHg7.zC7QCC1gxOaCHR9VK8JBqXakrNE9X3K",
-      "id": 1,
-      "username": "shadowrunner11"
+      "email": "tzuzulcode1@gmail.com",
+      "password": "$2a$10$WjNx7l8vs3jtakdn1RAf1u8m3h3W624C9abP7BtbMryKhIJycJGi6",
+      "username": "shadowrunner21",
+      "id": 1
     },
     {
-      "email": "matematicadivina2@gmail.com",
-      "password": "$2a$10$VHlIBsx9TsBLjssai.p//uIuP2hn9mKEha/eth3AAL5cVf1Ltqaq.",
-      "id": 2,
-      "username": "shadowrunner11"
-    },
-    {
-      "email": "toneloleo1@gmail.com",
-      "password": "$2a$10$WMkfwjQkF19v1E/jpdu7hevbxST8U22UZzMMiP.PK.gfM5R61ds0S",
-      "username": "Antonymasna",
-      "id": 3
-    },
-    {
-      "email": "toneloleo12@gmail.com",
-      "password": "$2a$10$NOTQEjHyv/6JXHAm6XhI/.avX4.KWcnJV8DyU.HGPsTAbDZyyPpLO",
-      "username": "yony",
-      "id": 4
-    },
-    {
-      "email": "pieroramirez8110@gmail.com",
-      "password": "$2a$10$BF6Kz8I1EwqGGlC8qs2SH.An6eYN2aSeXkTb4yqNWEiosb7MQHKr.",
-      "username": "assa",
-      "id": 5
-    },
-    {
-      "email": "thhonnelo@gmail.com",
-      "password": "$2a$10$a8LqWYIBS8UQKqjYlNf4we99lSm3i.B77ycopoSk70m.gP42.Gqzy",
-      "username": "lavaperu",
-      "id": 6
+      "email": "tzuzulcode12@gmail.com",
+      "password": "$2a$10$7YYhm8YsdzIyM9qXRZr09.Hkps20p8duW/0a5CeH2jv2fLlTyIMwS",
+      "username": "shadowrunner22",
+      "id": 2
     }
   ]
 }

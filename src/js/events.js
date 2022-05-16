@@ -31,3 +31,4 @@ $("#button-next-month").onClick(()=>{
     $$(".calendar__lr td").forEach(element=>element.setText(""))
     populateDays(new Date(year, monthNumber++,1))
 })
+

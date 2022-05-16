@@ -3,21 +3,25 @@
 @import url('./buttons.css');
 @import url('./anchors.css');
 @import url('./inputs.css');
-
+@import url('./card.css');
 :root{
+    --text-color: azure;
     --small: 5px;
     --body-bg: azure;
 }
 .dark-theme{
     --body-bg: linear-gradient(45deg, rgb(25,25,25), rgb(40,40,40));
+    --text-color: azure;
 }
 body{
     margin: 0;
+    background: rgba(25,25,25, 0.2);
 }
+
 
 header{
     width: 100%;
-    position: static;
+    position: sticky;
     top: 0;
     background: #202929;
 }
@@ -28,7 +32,7 @@ nav{
 }
 
 main{
-    min-height: 60vh;
+    min-height: 90vh;
     width: 100%;
 }
 
@@ -37,8 +41,25 @@ footer{
     width: 100%;
     color: #bbb;
     background: #1911a1;
-    position: absolute;
+    position: static;
     bottom: 0;
+}
+
+.modal{
+    position: absolute;
+    width: 100%;
+    top: 25vh;
+    z-index: 1000;
+    margin: auto;
+    animation: modalTransition 3s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+}
+#protector{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: " ";
+    z-index: 100;
 }
 
 #log-in{
@@ -54,6 +75,18 @@ footer{
 #wrapper{
     min-height: 100vh;
     background: var(--body-bg);
+}
+
+#events-container{
+    justify-content: space-evenly;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.blur{
+    filter: blur(4px);
 }
 
 .flex{
@@ -113,4 +146,13 @@ footer{
 
 .hidden{
     display: none;
+}
+
+@keyframes modalTransition {
+    0%{
+        top: -100px;
+    }
+    100%{
+        top: 25vh;
+    }
 }

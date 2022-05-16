@@ -1,0 +1,38 @@
+.card {
+    margin: 10px;
+    box-shadow: 1px 2px rgb(71, 20, 180);
+    border-radius: 12px;
+    padding: 15px;
+    display: grid;
+    gap: 5px;
+    min-width: 250px;
+    text-align: center;
+    background: rgba(58, 43, 113, 0.781);
+    color: var(--text-color);
+}
+
+.card:hover{
+    background: rgba(13, 53, 153, 0.781);
+}
+.card h3 {
+    
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 0px;
+}
+.card p {
+    border: 1px solid;
+    
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 0px;
+    min-height: 200px;
+}
+.fechas {
+    
+    border-top: 1px solid;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}

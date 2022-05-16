@@ -36,7 +36,7 @@ sendData.onClick(event=>{
             if(accessToken){
                 document.cookie = "data="+JSON.stringify({accessToken,username})
           
-                window.location.replace("./profile.html");
+                window.location.replace("./events.html");
             }else{
                 $("#status").setText("Datos incorectos" )
             }
