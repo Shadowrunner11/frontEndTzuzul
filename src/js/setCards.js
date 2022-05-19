@@ -13,14 +13,14 @@ let events =[
 try {
     
     const cookies = document.cookie.split("=")[1].split("; ")[0]
-    const {username, jwt} = cookies?.length? JSON.parse(cookies) :{username:void(0)}
-    console.log(jwt)
+    const {username, accessToken} = cookies?.length? JSON.parse(cookies) :{username:void(0)}
+    console.log(accessToken)
     if(username){
     
-    fetch("http://localhost:3000/events", {
+    fetch("https://tzuzulbf.herokuapp.com/events", {
         "method": "GET",
         "headers": {
-            "authorization": jwt
+            "authorization": accessToken
         }
     })
     .then(response => response.json())
@@ -56,11 +56,11 @@ try {
             let date_start = $("#fecha-inicio").element.value
             let date_finish =$("#fecha-fin").element.value
 
-            fetch("http://localhost:3000/events", {
+            fetch("https://tzuzulbf.herokuapp.com/events", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
-                    "authorization": jwt
+                    "authorization": accessToken
                 },
                 
                 body: JSON.stringify({name, description, date_start, date_finish})
