@@ -12,21 +12,32 @@ let events =[
 
 try {
     
-    const cookies = document.cookie.split("=")[1]
-    const {username} = cookies?.length? JSON.parse(cookies) :{username:void(0)}
+    const cookies = document.cookie.split("=")[1].split("; ")[0]
+    const {username, jwt} = cookies?.length? JSON.parse(cookies) :{username:void(0)}
+    console.log(jwt)
     if(username){
     
-    events.forEach(event=>{
-        const card = EventContainer.appendElement("div", ["card"])
-        card.element.draggable = true
-        card.appendElement("h3").setText(event.title)
-        card.appendElement("img").element.src="http://www.aal-europe.eu/wp-content/uploads/2013/04/events_medium.jpg"
-        card.appendElement("p").setText(event.description)
-        const fechas = card.appendElement("div", ["fechas"])
-        fechas.appendElement("span").setText(event.fechaInicio)
-        fechas.appendElement("span").setText(event.fechaInicio)
+    fetch("http://localhost:3000/events", {
+        "method": "GET",
+        "headers": {
+            "authorization": jwt
+        }
     })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.events);
     
+        data.events.forEach(event=>{
+            const card = EventContainer.appendElement("div", ["card"])
+            card.element.draggable = true
+            card.appendElement("h3").setText(event.name)
+            //card.appendElement("img").element.src="http://www.aal-europe.eu/wp-content/uploads/2013/04/events_medium.jpg"
+            card.appendElement("p").setText(event.description)
+            const fechas = card.appendElement("div", ["fechas"])
+            fechas.appendElement("span").setText((new Date(event.date_start)).toLocaleDateString())
+            fechas.appendElement("span").setText((new Date((event["date finish"]))).toLocaleDateString())
+        })
+    });
     const modal = $("#modal")
     const createEvent = $("#create-event")
     createEvent.element.classList.toggle("hidden")
@@ -39,6 +50,27 @@ try {
         $("#protector").element.classList.toggle("hidden")
         $("#wrapper").element.classList.toggle("blur")
         
+        $("#form-modal > input[type=submit]").onClick(()=>{
+            let name = $("#title").element.value
+            let description = $("#description").element.value
+            let date_start = $("#fecha-inicio").element.value
+            let date_finish =$("#fecha-fin").element.value
+
+            fetch("http://localhost:3000/events", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    "authorization": jwt
+                },
+                
+                body: JSON.stringify({name, description, date_start, date_finish})
+            }).then(response => {
+                console.log(response);
+              })
+              .catch(err => {
+                console.error(err);
+              });
+        })
     })
     $("#exit").onClick(event=>{
         event.preventDefault()

@@ -201,7 +201,7 @@ footer{
     }
 }
 
-@media (min-width:400px) {
+@media (min-width:100px) {
     .hidden-responsive{
         display: flex;
     }

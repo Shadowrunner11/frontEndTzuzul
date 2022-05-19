@@ -22,7 +22,8 @@ showCheckbox.onChange(event=>{
 sendData.onClick(event=>{
     event.preventDefault()
     //axios.post("http://tzuzulbf.herokuapp.com/login",{username,})
-    fetch("http://tzuzulbf.herokuapp.com/login", {
+    //fetch("http://tzuzulbf.herokuapp.com/login"),{
+    fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -33,16 +34,16 @@ sendData.onClick(event=>{
         .then(response=>response.json())
         .then(data=>{
             console.log(data)
-            const {accessToken} = data
-            const {username} = data.user
-            if(accessToken){
-                document.cookie = "data="+JSON.stringify({accessToken,username})
+            const {jwt, username} = data
+            //const {username} = data.user
+            if(jwt){
+                document.cookie = "data="+JSON.stringify({jwt,username})
           
                 window.location.replace("./events.html");
             }else{
                 $("#status").setText("Datos incorectos" )
             }
-            console.log(data)
+            //console.log(data)
         }
         )
         .catch(error=>{
