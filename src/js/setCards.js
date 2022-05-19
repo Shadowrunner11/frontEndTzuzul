@@ -31,7 +31,7 @@ try {
             const card = EventContainer.appendElement("div", ["card"])
             card.element.draggable = true
             card.appendElement("h3").setText(event.name)
-            //card.appendElement("img").element.src="http://www.aal-europe.eu/wp-content/uploads/2013/04/events_medium.jpg"
+            card.appendElement("img").element.src="http://www.aal-europe.eu/wp-content/uploads/2013/04/events_medium.jpg"
             card.appendElement("p").setText(event.description)
             const fechas = card.appendElement("div", ["fechas"])
             fechas.appendElement("span").setText((new Date(event.date_start)).toLocaleDateString())
