@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('./reset.css');
+@import url('./buttons.css');
+@import url('./anchors.css');
+@import url('./inputs.css');
+@import url('./card.css');
+@import url('./menu.css');
+
+:root{
+    --text-color: azure;
+    --small: 5px;
+    --body-bg: azure;
+}
+.dark-theme{
+    --body-bg: linear-gradient(45deg, rgb(25,25,25), rgb(40,40,40));
+    --text-color: azure;
+}
+body{
+    margin: 0;
+    background: rgba(25,25,25, 0.2);
+}
+
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #202929;
+}
+
+#burger{
+    position: sticky;
+    height: 100%;
+    background-color: rgb(125,125,125);
+    padding: 12px;
+}
+
+.menu__burger >div{
+    content: "";
+    background-color: aqua;
+    height: 8px;
+    margin: auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    width: 20%;
+}
+
+
+nav{
+    padding:20px;
+    min-height: 70px;
+}
+
+main{
+    
+    min-height: 99vh;
+    width: 100%;
+}
+
+footer{
+    text-align: center;
+    width: 100%;
+    color: #bbb;
+    background: #202929;
+    position: static;
+    bottom: 0;
+}
+
+.modal{
+    position: absolute;
+    width: 100%;
+    top: 25vh;
+    z-index: 1000;
+    margin: auto;
+    animation: modalTransition 3s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+}
+#protector{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: " ";
+    z-index: 100;
+}
+
+#log-in{
+    background-color: #40943d;
+    padding: 10px;
+    border-radius: var(--small);
+}
+
+#log-in:hover{
+    background-color: #f0943f;
+}
+
+#wrapper{
+    min-height: 100vh;
+    background: var(--body-bg);
+}
+
+#events-container{
+    margin-top: 100px;
+    justify-content: space-evenly;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.blur{
+    filter: blur(4px);
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-center{
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-space-bet{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-container > *{
+    margin: 6px 0 4px 0;
+}
+.form-container{
+    padding: 5px;
+    color: aliceblue;
+    max-width: 60%;
+    min-width: 250px;
+    min-height: 220px;
+    margin: auto;
+    background: rgba(88, 23, 202, 0.621);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba(16, 16, 165, 0.731);
+}
+
+.pl-30{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.rigth{
+    width: fit-content;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.theme{
+    cursor: pointer;
+    color: azure;
+}
+
+.hidden, .hidden-responsive{
+    display: none;
+}
+
+.roll{
+    z-index: 400;
+    animation-name: roll;
+    animation-duration: 2s;
+}
+
+.flex-nav{
+    flex-direction: column;
+}
+
+
+@keyframes modalTransition {
+    0%{
+        top: -100px;
+    }
+    100%{
+        top: 25vh;
+    }
+}
+
+@keyframes roll {
+    from{
+        margin-top: -200px;
+    }
+    to{
+        margin-top:0;
+    }
+}
+
+@media (min-width:400px) {
+    .hidden-responsive{
+        display: flex;
+    }
+    .flex-nav{
+        flex-direction: row;
+    }
+    #burger{
+        display: none;
+    }
+    header{
+        position: sticky;
+    }
+    main{
+        min-height: 90vh;
+    }
+    #events-container{
+        margin-top: 0;
+    }
+}

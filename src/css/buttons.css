@@ -1,0 +1,38 @@
+button, input[type="button"], input[type="submit"]{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 30%;
+    min-width: 70px;
+    height: 40px;
+    color: aliceblue;
+    border: none;
+    background-color: #2935f5;
+}
+
+button:hover, input[type="button"]:hover, input[type="submit"]:hover{
+
+    background-color: #3a45ff;
+}
+
+button#create-event{
+    width: 50px;
+    height: 70px;
+    position: fixed;
+    bottom: 40px;
+    margin: 0px;
+    border-radius: 50%;
+    right: 20px;
+}
+
+#exit{
+    font-size: larger;
+    border-radius: 50%;
+    background-color: rgba(200, 220, 220, 0.4);
+    right: 5px;
+    position: absolute;
+    top: 0;
+    max-width: 26px;
+    min-width: 20px;
+    height: 26px;
+    padding: 0;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projecto front end fundamentals</title>
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="modal" class="hidden">
+        <form id="form-modal" class="form-container flex flex-column flex-center" action="" method="post">
+            <button id="exit">x</button>
+            <label for="title">Titulo</label>
+            <input type="text" name="title" id="title">
+
+            <label for="description">Descripcion</label>
+            <input type="text" name="description" id="description">
+
+            <label for="fecha-inicio">Fecha de inicio</label>
+            <input type="date" name="fecha-inicio" id="fecha-inicio">
+
+            <label for="fecha-fin">Titulo</label>
+            <input type="date" name="fecha-fin" id="fecha-fin">
+
+
+            <input type="submit" value="save">
+        </form>
+    </div>
+    <div id="wrapper">
+        <div id="protector" class="hidden">
+
+
+        </div>
+        <header>
+            <div id="burger" class="menu__burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="flex flex-space-bet flex-nav hidden-responsive">
+                
+                <div class="left">
+                    <a href="../index.html">Inicio</a>
+                </div>
+                <ul class="menu active">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./events.html">Eventos</a></li>
+                </ul>
+                <div id="right-data" class="rigth flex options flex-nav"> 
+                    <a href="./register.html">Sing in</a>
+                    <a id="log-in" href="./login.html">Log in</a>
+                    <span class="material-symbols-outlined theme">emoji_objects</span>
+                    <div class="hmbrg">
+                        <div class="line "></div>
+                        <div class="line "></div>
+                        <div class="line "></div>
+                    </div>
+                </div>
+                
+            </nav>
+        </header>
+        <main class="flex flex-center flex-column">
+            <aside>
+
+            </aside>
+            <section id="events-container" class="flex flex-wrap flex-center">
+                <button id="create-event" class="hidden">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+            </section>
+        </main>
+        <footer>
+            Little Dev derechos reservados
+        </footer>   
+    </div>
+    <script src="../js/theme.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/setCards.js" type="module"></script>
+    <script src="../js/plugin/menu.js"></script>
+
+</body>
+</html>
