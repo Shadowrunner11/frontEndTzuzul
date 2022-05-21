@@ -1,4 +1,5 @@
 import { $ } from "./functions/selectors.js"
+import { showEventModal } from "./functions/showModal.js"
 
 
 const EventContainer = $("#events-container")
@@ -36,19 +37,20 @@ try {
             const fechas = card.appendElement("div", ["fechas"])
             fechas.appendElement("span").setText((new Date(event.date_start)).toLocaleDateString())
             fechas.appendElement("span").setText((new Date((event["date finish"]))).toLocaleDateString())
+            const actions =  card.appendElement("div", ["actions", "flex"])
+            actions.appendElement("i", [ "delete-event","material-symbols-outlined"], event.event_id).setText("delete")
+            actions.appendElement("i", [ "edit-event", "material-symbols-outlined"], event.event_id).setText("edit")
         })
+        
+        
     });
+    
     const modal = $("#modal")
     const createEvent = $("#create-event")
     createEvent.element.classList.toggle("hidden")
     createEvent.onClick(event=>{
     
-        modal.element.classList.toggle("hidden")
-        modal.element.classList.toggle("modal")
-        const overflow = document.body.style.overflow
-        document.body.style.overflow = overflow.length? "":"hidden"
-        $("#protector").element.classList.toggle("hidden")
-        $("#wrapper").element.classList.toggle("blur")
+        showEventModal(modal)
         
         $("#form-modal > input[type=submit]").onClick(()=>{
             let name = $("#title").element.value
@@ -75,6 +77,68 @@ try {
     $("#exit").onClick(event=>{
         event.preventDefault()
         createEvent.element.click()
+    })
+    EventContainer.onClick(async (e)=>{
+        let event_id = e.target.id
+        console.log(e.target.className)
+        if(e.target.className == "edit-event material-symbols-outlined"){
+            showEventModal(modal)
+            $("#form-modal > input[type=submit]").onClick(()=>{
+                
+                let data = {
+                    event_id
+                }
+                
+                let name = $("#title").element.value
+                if (name) data["name"] = name
+
+                let description = $("#description").element.value
+                if (description) data["description"] = description
+
+                let date_start = $("#fecha-inicio").element.value
+                if (date_start) data["date_start"] = date_start
+
+                let date_finish =$("#fecha-fin").element.value
+                if (date_finish) data["date_finish"] = date_finish
+                confirm(data)
+                //fetch("http://localhost:3000/events", {
+                fetch("https://tzuzulbf.herokuapp.com/events", {
+
+                "method": "PATCH",
+                "headers": {
+                    "authorization": accessToken,
+                    "Content-Type": "application/json"
+                },
+                "body": JSON.stringify(data)
+                })
+                .then(response => {
+                window.location.replace("./events.html");
+                console.log(response);
+                })
+                .catch(err => {
+                console.error(err);
+                });
+            })
+            return
+        }
+        if(e.target.className!= "delete-event material-symbols-outlined")return
+        let del = confirm("Seguro que quiere eleminar el evento.")
+        //console.log(del)
+        if (del && event_id){
+            console.log(event_id)
+            
+            fetch("https://tzuzulbf.herokuapp.com/events", {
+                "method": "DELETE",
+                "headers": {
+                    "authorization": accessToken,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({event_id})
+            }).then((res)=>{
+                console.log(res)
+                window.location.replace("./events.html");
+            })
+        }
     })
     }
 } catch (error) {
