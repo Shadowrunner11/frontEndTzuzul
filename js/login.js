@@ -35,8 +35,7 @@ sendData.onClick(event=>{
         .then(data=>{
             console.log(data)
             
-            const {username} = data
-            const {accessToken} = data
+            const {username, accessToken} = data
             if(accessToken){
                 document.cookie = "data="+JSON.stringify({accessToken,username})
           

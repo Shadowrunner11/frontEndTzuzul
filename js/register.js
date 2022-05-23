@@ -44,8 +44,7 @@ registerData.onClick(event=>{
             })
                 .then(response=>response.json())
                 .then(data=>{
-                    const {accessToken} = data
-                    const {username} = data.user
+                    const {username, accessToken} = data
                     if(accessToken){
                         document.cookie = "data="+JSON.stringify({accessToken,username})
                 
