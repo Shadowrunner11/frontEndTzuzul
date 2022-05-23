@@ -17,8 +17,8 @@ try {
     const {username, accessToken} = cookies?.length? JSON.parse(cookies) :{username:void(0)}
     console.log(accessToken)
     if(username){
-    fetch("http://localhost:3000/events", {    
-    //fetch("https://tzuzulbf.herokuapp.com/events", {
+    //fetch("http://localhost:3000/events", {    
+    fetch("https://api-expres.herokuapp.com/events", {
         "method": "GET",
         "headers": {
             "authorization": accessToken
@@ -57,8 +57,9 @@ try {
             let description = $("#description").element.value
             let date_start = $("#fecha-inicio").element.value
             let date_finish =$("#fecha-fin").element.value
-            fetch("http://localhost:3000/events", {
-            //fetch("https://tzuzulbf.herokuapp.com/events", {
+            //fetch("http://localhost:3000/events", {
+            fetch("https://api-expres.herokuapp.com/events", {
+
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -101,8 +102,9 @@ try {
                 let date_finish =$("#fecha-fin").element.value
                 if (date_finish) data["date_finish"] = date_finish
                 confirm(data)
-                fetch("http://localhost:3000/events", {
-                //fetch("https://tzuzulbf.herokuapp.com/events", {
+                //fetch("http://localhost:3000/events", {
+                fetch("https://api-expres.herokuapp.com/events", {
+
 
                 "method": "PATCH",
                 "headers": {
@@ -126,8 +128,9 @@ try {
         //console.log(del)
         if (del && event_id){
             console.log(event_id)
-            fetch("http://localhost:3000/events", {
-            //fetch("https://tzuzulbf.herokuapp.com/events", {
+            //fetch("http://localhost:3000/events", {
+            fetch("https://api-expres.herokuapp.com/events", {
+
                 "method": "DELETE",
                 "headers": {
                     "authorization": accessToken,
