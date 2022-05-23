@@ -17,8 +17,8 @@ try {
     const {username, accessToken} = cookies?.length? JSON.parse(cookies) :{username:void(0)}
     console.log(accessToken)
     if(username){
-    
-    fetch("https://tzuzulbf.herokuapp.com/events", {
+    fetch("http://localhost:3000/events", {    
+    //fetch("https://tzuzulbf.herokuapp.com/events", {
         "method": "GET",
         "headers": {
             "authorization": accessToken
@@ -36,7 +36,7 @@ try {
             card.appendElement("p").setText(event.description)
             const fechas = card.appendElement("div", ["fechas"])
             fechas.appendElement("span").setText((new Date(event.date_start)).toLocaleDateString())
-            fechas.appendElement("span").setText((new Date((event["date finish"]))).toLocaleDateString())
+            fechas.appendElement("span").setText((new Date(event.date_finish)).toLocaleDateString())
             const actions =  card.appendElement("div", ["actions", "flex"])
             actions.appendElement("i", [ "delete-event","material-symbols-outlined"], event.event_id).setText("delete")
             actions.appendElement("i", [ "edit-event", "material-symbols-outlined"], event.event_id).setText("edit")
@@ -57,8 +57,8 @@ try {
             let description = $("#description").element.value
             let date_start = $("#fecha-inicio").element.value
             let date_finish =$("#fecha-fin").element.value
-
-            fetch("https://tzuzulbf.herokuapp.com/events", {
+            fetch("http://localhost:3000/events", {
+            //fetch("https://tzuzulbf.herokuapp.com/events", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -101,8 +101,8 @@ try {
                 let date_finish =$("#fecha-fin").element.value
                 if (date_finish) data["date_finish"] = date_finish
                 confirm(data)
-                //fetch("http://localhost:3000/events", {
-                fetch("https://tzuzulbf.herokuapp.com/events", {
+                fetch("http://localhost:3000/events", {
+                //fetch("https://tzuzulbf.herokuapp.com/events", {
 
                 "method": "PATCH",
                 "headers": {
@@ -126,8 +126,8 @@ try {
         //console.log(del)
         if (del && event_id){
             console.log(event_id)
-            
-            fetch("https://tzuzulbf.herokuapp.com/events", {
+            fetch("http://localhost:3000/events", {
+            //fetch("https://tzuzulbf.herokuapp.com/events", {
                 "method": "DELETE",
                 "headers": {
                     "authorization": accessToken,

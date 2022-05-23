@@ -33,8 +33,9 @@ registerData.onClick(event=>{
 
     if($("#repeat-password").content()===passwordInput.content()){
        try {
+            fetch("http://localhost:3000/events", {
             
-            fetch("https://tzuzulbf.herokuapp.com/register", {
+            //fetch("https://tzuzulbf.herokuapp.com/register", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
